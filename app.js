@@ -3,7 +3,7 @@ var bodyParser = require("body-parser");
 var cookieParser = require('cookie-parser');
 var app = express();
 var manufacturers =
-    [
+[
         {
           "name": "Opel",
           "country": "Germany",
@@ -45,7 +45,8 @@ var manufacturers =
           "founded":"November 1, 1950"
         }
 ];
-var cars = [
+var cars =
+[
     {
         "name": "Corolla",
         "consumption": "7l/100km",
@@ -210,7 +211,7 @@ var cars = [
     }
 
 ];
-app.use(express.static(__dirname + '/student'));
+app.use(express.static(__dirname + '/public'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({
     extended: false
@@ -293,7 +294,7 @@ app.post('/addManufacturers', function (req, res) {
     res.send(manufacturers);
 });
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + "/student/" + "index.html");
+    res.sendFile(__dirname + "/public/" + "index.html");
 });
 
 var server = app.listen(8081, function () {

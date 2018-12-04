@@ -1,0 +1,133 @@
+/* CSS */
+body{
+  background: #333;
+  color: #eee;
+  margin: 0;
+  font-family: arial; 
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+body>header{
+  padding-top: 1em;
+}
+nav#main-menu{
+  background: #555;
+  padding: .5em 0;
+  padding-top: 1em;
+}
+ul.menu{
+  margin: 0;
+  padding: 0 .5em;;
+}
+#main-menu ul.menu li{
+  list-style-type: none;
+  display: inline-grid;
+}
+#main-menu .menu .menu-item button{
+  background: rgba(250,250,0,.6);
+  border: none;
+  border-bottom: solid .3em yellow;
+  padding: .5em 1em;
+  font-weight: bold;
+  color: #555;
+  margin: .2em .3em;
+  transition: .5s ease;
+}
+#main-menu .menu .menu-item.active  button{
+  background: rgba(250,250,0,.9);
+}
+#main-menu .menu .menu-item button:hover{
+  background: rgba(250,250,0,.8);
+}
+#main-container{
+  background: #2a2a2a;
+}
+#main-content{
+  padding: .7em;
+  min-height: 80vh;
+}
+h1{
+  margin:0;
+  padding: .5em;
+  color: #cc0;
+}
+.item{
+  background: #444;
+  color: #ddd;
+  margin: .5%;
+  width: 32.333%;
+  display: inline-grid;
+}
+.item header{
+  background: #393939;
+  padding: .7em;
+  color: #cc0;
+  font-size: 1.1em;
+}
+.item .container{
+   padding: .7em;
+}
+.item .container div{
+  text-align: right;
+  padding: .2em 0; 
+  min-height: 1.2em;
+}
+.item .container div:not(:last-child){
+  border-bottom: solid .1em rgba(255,255,255,.2);
+}
+.item .container div span{
+  text-align: left;
+  float: left;
+  color: #bb0
+}
+.send-form{
+  background: #3a3a3a;
+  padding: 1em;
+  width: 28em;
+  margin: 0 auto;
+}
+.send-form .form-item{
+  padding-bottom: .5em;
+}
+.send-form .form-item label{
+  width: 10em;
+  display: inline-block;
+}
+.send-form .form-item label+input{
+  width: 21em;
+  background: #222;
+  border: solid .1em #555;
+  color: #aaa;
+}
+.send-form .form-item label+input:focus{
+    background: #2a2a2a;
+}
+.send-form [type=submit]{
+  font-size: 1em;
+  font-family: arial;
+  background: #390;
+  border: solid .13em #363;
+  color: #eee;
+  padding: .2em .4em;
+  
+}
+.send-form [type=submit]:hover{
+    background: #4a0;
+}
+.text-right{
+  text-align: right;
+}
+.text-center{
+  text-align: center;
+}
+
+.getManufacturer{
+  cursor: pointer;
+  color: #ccc;
+  transition: .2s ease;
+}
+.getManufacturer:hover{
+  color: #fff;
+  text-decoration: underline;
+}

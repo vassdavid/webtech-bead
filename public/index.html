@@ -4,8 +4,6 @@
   <title>Webtech Beadandó - Vass Dávid</title>
   <meta charset="UTF-8">
   <link type="text/css" rel="stylesheet" href="css/style.css">
-  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-  <script type="text/javascript" src="js/main.js"></script>
   <base href="/" target="_blank">
 </head>
 <body>
@@ -13,13 +11,29 @@
     <nav id="main-menu">
       <ul class="menu">
         <li class="menu-item">
-          <a href="#">Home</a>
+          <button type="button" id="getManufacturers" name="button">Show manufacturers</button>
+        </li>
+        <li class="menu-item">
+          <button type="button" id="getCars" name="button">Show cars</button>
+        </li>
+        <li class="menu-item">
+          <button type="button" id="getManufacturerNames" name="button">Show manifacturer names</button>
+        </li>
+        <li class="menu-item">
+          <button type="button" id="addCar" name="button">Create new car</button>
+        </li>
+        <li class="menu-item">
+          <button type="button" id="addManufacturer" name="button">Create new manufacturer</button>
         </li>
       </ul>
     </nav>
   </header>
   <div id="main-container">
-    <h1>Home</h1>
+    <div id="main-content">
+
+    </div>
   </div>
 </body>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </html>
