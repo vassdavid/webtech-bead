@@ -4,8 +4,10 @@ $("#getManufacturers").click(function(){
   $(this).parent().addClass('active');
   $.get( "manufacturers", function( manufacturers ) {
     manView = '<h1 class="title">Manufacturers</h1>';
+    if(manufacturers.length <1)
+      manView =+ '<h1>We can\'t find manufacturers</h1>';
     i=0;
-    while( manufacturer = manufacturers[i++]) {
+    while( manufacturer = manufacturers[i++])
       manView +=
       '<div class="manufacturer item">' +
         '<header>' + manufacturer.name + '</header>' +
@@ -14,7 +16,6 @@ $("#getManufacturers").click(function(){
           '<div><span>Founded: </span>' + manufacturer.founded  + '</div>' +
         "</div>" +
       "</div>";
-    }
     $( "#main-content" ).html(manView);
   });
 });
@@ -24,6 +25,8 @@ $("#getCars").click(function(){
   $(this).parent().addClass('active');
   $.get( "cars", function( cars ) {
     manView = '<h1 class="title">Cars</h1>';
+    if(cars.length <1)
+      manView =+ '<h1>We can\'t find cars</h1>';
     i=0;
     while( car = cars[i++]) {
       manView +=
@@ -80,10 +83,10 @@ $("#addCar").click(function(){
       '<label for="car-manufacturer">Manufacturer:</label>' +
       '<select name="manufacturer" required>';
 
-    //generate manufacturer options
-    i=0;
-    while(manufacturerName = manufacturerNames[i++])
-      manView += '<option value="' + manufacturerName + '">' + manufacturerName + '</option>';
+      //generate manufacturer options
+      i=0;
+      while(manufacturerName = manufacturerNames[i++])
+        manView += '<option value="' + manufacturerName + '">' + manufacturerName + '</option>';
 
     manView +=
       '</select>'+
@@ -139,26 +142,29 @@ $("#addManufacturer").click(function(){
 
 //get manufacturer
 $("#main-content").on('click',".getManufacturer",function(){
-  console.log("Tes");
   manName = $(this).data("manufacturer");
   document.cookie = "name=" + manName;
   $.get("manufacturer", function( cars ){
-    manView = '<h1 class="title">'+ manName +' Cars</h1>';
-    i=0;
-    while( car = cars[i++]) {
-      manView +=
-      '<div class="car item">' +
-        '<header>' + car.name + '</header>' +
-        '<div class="container">' +
-          '<div><span>Consumption: </span>' + car.consumption  + '</div>' +
-          '<div><span>Color: </span>'+ car.color  + '</div>' +
-          '<div><span>Manufacturer: </span>'+ car.manufacturer  + '</div>' +
-          '<div><span>Available: </span>'+ car.available  + '</div>' +
-          '<div><span>Year: </span>' + car.year  + '</div>' +
-          '<div><span>Horsepower: </span>' + car.horsepower  + '</div>' +
-        "</div>"+
-      "</div>";
-    }
+        if(cars.length < 1)
+          manView = '<h1>We can\'t find cars to the '+ manName + ' manufacturer';
+        else
+          manView = '<h1 class="title">'+ manName +' Cars</h1>';
+        i=0;
+        while( car = cars[i++]) {
+          manView +=
+          '<div class="car item">' +
+            '<header>' + car.name + '</header>' +
+            '<div class="container">' +
+              '<div><span>Consumption: </span>' + car.consumption  + '</div>' +
+              '<div><span>Color: </span>'+ car.color  + '</div>' +
+              '<div><span>Manufacturer: </span>'+ car.manufacturer  + '</div>' +
+              '<div><span>Available: </span>'+ car.available  + '</div>' +
+              '<div><span>Year: </span>' + car.year  + '</div>' +
+              '<div><span>Horsepower: </span>' + car.horsepower  + '</div>' +
+            "</div>"+
+          "</div>";
+        }
+
     $( "#main-content" ).html(manView);
   });
 });
