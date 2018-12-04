@@ -90,7 +90,7 @@ $("#addCar").click(function(){
     '</div>' +
     '<div class="form-item">' +
       '<label for="car-available">Available:</label>' +
-      '<input id="car-available" name="available" required>' +
+      '<input id="car-available" type="number" name="available" required>' +
     '</div>' +
     '<div class="form-item">' +
       '<label for="car-year">Year:</label>' +
@@ -114,7 +114,7 @@ $("#addManufacturer").click(function(){
   $(this).parent().addClass('active');
   manView =
   '<h1 class="title text-center">Create Manufacturer</h1>' +
-  '<form method="POST" action="addManufacturer" class="send-form">' +
+  '<form method="POST" action="addManufacturers" class="send-form">' +
     '<div class="form-item">'+
       '<label for="manufacturer-name">Name:</label>' +
       '<input id="manufacturer-name" name="name" required>' +
@@ -138,7 +138,6 @@ $("#addManufacturer").click(function(){
 });
 
 //get manufacturer
-
 $("#main-content").on('click',".getManufacturer",function(){
   console.log("Tes");
   manName = $(this).data("manufacturer");
