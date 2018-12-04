@@ -6,7 +6,9 @@
   "author": {
     "name": "Vass Dávid"
   },
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
   "devDependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
