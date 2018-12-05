@@ -44,8 +44,9 @@ ul.menu{
   background: #2a2a2a;
 }
 #main-content{
-  padding: .7em;
+  padding: .7em .7em 5em;
   min-height: 80vh;
+  p
 }
 h1{
   margin:0;
