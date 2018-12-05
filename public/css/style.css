@@ -131,3 +131,14 @@ h1{
   color: #fff;
   text-decoration: underline;
 }
+@media only screen and (max-width: 750px) {
+    .item {
+        width: 49%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .item {
+        width: 99%;
+        margin-top: 2%;
+    }
+}
