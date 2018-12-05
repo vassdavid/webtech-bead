@@ -107,7 +107,6 @@ $("#addCar").click(function(){
       '<input type="submit" value="Send">' +
     '</div>' +
   "</form>";
-  ;
   $( "#main-content" ).html(manView);
 });
 
